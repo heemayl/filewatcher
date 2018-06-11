@@ -1,0 +1,15 @@
+[Unit]
+Description=filewatcher -- File watcher and notifier for GNU/Linux
+After=local-fs.target
+
+[Service]
+ExecStart=/path/to/fileatcher.py args...
+Type=simple
+Restart=on-failure
+RestartSec=500ms
+KillSignal=SIGTERM
+
+[Install]
+WantedBy=multi-user.target
+Alias=filewatcher.service
+
